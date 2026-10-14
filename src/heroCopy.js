@@ -58,6 +58,8 @@ export function initHeroCopy(hero) {
     });
     hero.style.setProperty('--hero-copy', v.toFixed(3));
     hero.classList.toggle('copy-hidden', v < 0.6);
+    // iOS Safari can leave faded copy painted after a fast scroll back up, so fully hide it at 0
+    hero.classList.toggle('copy-off', v === 0);
     hero.classList.add('copy-ready');
   }
 

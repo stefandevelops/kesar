@@ -100,7 +100,7 @@ p { margin: 0 0 1em; }
 .hero-dips-title { font-family: var(--serif); font-size: clamp(24px, 2.4vw, 34px); color: var(--cream); }
 .hero-dips-list { margin-top: 6px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
 .hero.is-3d::after { content: ''; display: block; height: 90vh; }
-.hero.is-3d .hero-stage { position: sticky; top: var(--header-h, 72px); min-height: 0; height: calc(100svh - var(--header-h, 72px)); background: radial-gradient(circle at 71% 46%, rgba(227, 164, 60, 0.2), transparent 38%), radial-gradient(circle at 70% 120%, rgba(31, 74, 72, 0.45), transparent 50%), var(--bg); }
+.hero.is-3d .hero-stage { position: sticky; top: var(--header-h, 72px); min-height: 0; height: calc(100vh - var(--header-h, 72px)); height: calc(100dvh - var(--header-h, 72px)); background: radial-gradient(circle at 71% 46%, rgba(227, 164, 60, 0.2), transparent 38%), radial-gradient(circle at 70% 120%, rgba(31, 74, 72, 0.45), transparent 50%), var(--bg); }
 .hero.is-3d .hero-img { display: none; }
 .hero.is-3d .hero-stage::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.09; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 .hero.is-3d .hero-inner { padding-top: 32px; padding-bottom: clamp(32px, 6vh, 72px); }
@@ -406,6 +406,7 @@ input::placeholder, textarea::placeholder { color: #7d705f; }
   .hero.is-3d .hero-shade { opacity: var(--hero-copy, 1); background: linear-gradient(0deg, var(--bg) 0%, rgba(22, 17, 13, 0.7) 60%, rgba(22, 17, 13, 0.35) 100%); }
   .hero.is-3d::after { height: 130vh; }
   .hero.is-3d.copy-hidden .hero-inner { pointer-events: none; }
+  .hero.is-3d.copy-off .hero-inner { visibility: hidden; }
   .hero-dips { left: 0; width: auto; bottom: 13%; padding: 0 24px; }
   .hero.is-3d .hero-hint { left: 0; right: 0; bottom: 26px; text-align: center; }
 }
