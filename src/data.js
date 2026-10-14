@@ -1,0 +1,178 @@
+// Opening hours are indexed by day of week (0 = Sunday). null = closed all day.
+const STANDARD_HOURS = [
+  ['13:00', '22:00'],
+  ['17:00', '22:30'],
+  ['17:00', '22:30'],
+  ['17:00', '22:30'],
+  ['17:00', '22:30'],
+  ['16:30', '23:00'],
+  ['16:30', '23:00'],
+];
+
+export const BRANCHES = [
+  {
+    id: 'belfast',
+    name: 'Belfast',
+    area: 'Botanic Avenue',
+    address: '41 Botanic Avenue, Belfast BT7 1JL',
+    phone: '028 9649 6201',
+    lat: 54.5884,
+    lon: -5.934,
+    hours: [
+      ['12:30', '22:00'],
+      ['17:00', '22:30'],
+      ['17:00', '22:30'],
+      ['17:00', '22:30'],
+      ['17:00', '23:00'],
+      ['12:00', '23:00'],
+      ['12:00', '23:00'],
+    ],
+    note: 'Our first restaurant, opened 2004. Lunch Friday to Sunday.',
+    features: ['Licensed bar', 'Private room for 24', 'Step-free access'],
+    delivery: { districts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15], eta: '40–55 min' },
+  },
+  {
+    id: 'templepatrick',
+    name: 'Templepatrick',
+    area: 'Antrim Road',
+    address: '12 Antrim Road, Templepatrick BT39 0AP',
+    phone: '028 9649 6202',
+    lat: 54.7016,
+    lon: -6.0936,
+    hours: [['12:30', '21:30'], null, ['17:00', '22:00'], ['17:00', '22:00'], ['17:00', '22:00'], ['16:30', '22:30'], ['16:30', '22:30']],
+    note: 'Free car park for 40 cars. Closed Mondays.',
+    features: ['Free parking', 'Large groups welcome', 'Step-free access'],
+    delivery: { districts: [36, 39, 41], eta: '45–60 min' },
+  },
+  {
+    id: 'lisburn',
+    name: 'Lisburn',
+    area: 'Bow Street',
+    address: '18 Bow Street, Lisburn BT28 1BN',
+    phone: '028 9649 6203',
+    lat: 54.5113,
+    lon: -6.045,
+    hours: STANDARD_HOURS,
+    note: 'Two minutes from Bow Street Mall car park.',
+    features: ['Bring your own wine', 'Kids menu', 'Step-free access'],
+    delivery: { districts: [27, 28], eta: '40–55 min' },
+  },
+  {
+    id: 'bangor',
+    name: 'Bangor',
+    area: 'Main Street',
+    address: '95 Main Street, Bangor BT20 4AF',
+    phone: '028 9649 6204',
+    lat: 54.66,
+    lon: -5.669,
+    hours: STANDARD_HOURS,
+    note: 'Sea views from the upstairs dining room.',
+    features: ['Licensed bar', 'Private room for 16', 'Kids menu'],
+    delivery: { districts: [19, 20, 21, 23], eta: '45–60 min' },
+  },
+  {
+    id: 'newry',
+    name: 'Newry',
+    area: 'Hill Street',
+    address: '33 Hill Street, Newry BT34 1AR',
+    phone: '028 9649 6205',
+    lat: 54.176,
+    lon: -6.339,
+    hours: [['13:00', '22:00'], ['17:00', '22:00'], ['17:00', '22:00'], ['17:00', '22:00'], ['17:00', '22:00'], ['17:00', '23:00'], ['17:00', '23:00']],
+    note: 'Our newest kitchen, opened spring 2024.',
+    features: ['Licensed bar', 'Large groups welcome', 'Kids menu'],
+    delivery: { districts: [34, 35], eta: '45–60 min' },
+  },
+];
+
+export const ORDER_RULES = {
+  deliveryFee: 2.5,
+  freeDeliveryOver: 30,
+  minDelivery: 15,
+  collectionDiscount: 0.15,
+  collectionDiscountOver: 20,
+  prepCollection: 25,
+  prepDelivery: 50,
+};
+
+export const ALLERGENS = {
+  celery: 'Celery',
+  gluten: 'Cereals containing gluten',
+  crustaceans: 'Crustaceans',
+  eggs: 'Eggs',
+  fish: 'Fish',
+  lupin: 'Lupin',
+  milk: 'Milk',
+  molluscs: 'Molluscs',
+  mustard: 'Mustard',
+  nuts: 'Tree nuts',
+  peanuts: 'Peanuts',
+  sesame: 'Sesame',
+  soya: 'Soya',
+  sulphites: 'Sulphites',
+};
+
+export const CATEGORIES = [
+  ['starters', 'Starters'],
+  ['tandoor', 'From the tandoor'],
+  ['curries', 'Curries'],
+  ['biryani', 'Biryani'],
+  ['veg', 'Vegetables & dal'],
+  ['sides', 'Rice & breads'],
+  ['desserts', 'Desserts'],
+];
+
+// heat: 0 mild, 1 medium, 2 hot, 3 very hot
+export const MENU = [
+  { id: 'poppadoms', cat: 'starters', name: 'Poppadoms & chutneys', desc: 'Two per person with mango chutney, mint raita and lime pickle.', price: 3.5, v: true, gf: true, heat: 0, allergens: ['milk', 'mustard'] },
+  { id: 'samosa', cat: 'starters', name: 'Vegetable samosa', desc: 'Spiced potato and pea in crisp pastry, tamarind and mint chutneys.', price: 5.5, v: true, vg: true, heat: 1, allergens: ['gluten'], img: 'samosa.jpg' },
+  { id: 'bhaji', cat: 'starters', name: 'Onion bhaji', desc: 'Shredded onion in spiced gram-flour batter.', price: 5.5, v: true, vg: true, gf: true, heat: 1, allergens: [] },
+  { id: 'paneer-tikka', cat: 'starters', name: 'Paneer tikka', desc: 'Chargrilled cottage cheese, peppers and red onion, mint chutney.', price: 7.25, v: true, gf: true, heat: 1, allergens: ['milk', 'mustard'], img: 'paneer-tikka.jpg', popular: true },
+  { id: 'seekh', cat: 'starters', name: 'Lamb seekh kebab', desc: 'Minced lamb with ginger, green chilli and coriander, cooked on the skewer.', price: 7.5, gf: true, heat: 2, allergens: ['milk'] },
+  { id: 'pakora', cat: 'starters', name: 'Amritsari fish pakora', desc: 'Strips of hake in carom-seed batter with chaat masala.', price: 7.95, gf: true, heat: 1, allergens: ['fish', 'mustard'] },
+
+  { id: 'tandoori', cat: 'tandoor', name: 'Tandoori chicken', desc: 'Half chicken on the bone, marinated overnight in yoghurt and Kashmiri chilli.', price: 13.95, gf: true, heat: 1, allergens: ['milk', 'mustard'], img: 'tandoori.jpg' },
+  { id: 'tikka', cat: 'tandoor', name: 'Chicken tikka', desc: 'Boneless thigh, smoky from the clay oven, with salad and mint chutney.', price: 14.5, gf: true, heat: 1, allergens: ['milk', 'mustard'] },
+  { id: 'lamb-chops', cat: 'tandoor', name: 'Tandoori lamb chops', desc: 'Four chops in a raw papaya and garam masala marinade.', price: 19.95, gf: true, heat: 1, allergens: ['milk'] },
+  { id: 'prawns', cat: 'tandoor', name: 'Tandoori king prawns', desc: 'Six king prawns with ajwain, garlic and lime.', price: 18.95, gf: true, heat: 1, allergens: ['crustaceans', 'milk'] },
+  { id: 'mixed-grill', cat: 'tandoor', name: 'Kesar mixed grill', desc: 'Chicken tikka, tandoori chicken, seekh kebab and a lamb chop. Made for sharing.', price: 21.95, gf: true, heat: 1, allergens: ['milk', 'mustard'] },
+
+  { id: 'butter-chicken', cat: 'curries', name: 'Butter chicken', desc: 'Our most ordered dish. Tandoor-roasted chicken in a silky tomato, butter and fenugreek sauce.', price: 14.95, gf: true, heat: 0, allergens: ['milk', 'nuts'], img: 'butter-chicken.jpg', popular: true },
+  { id: 'tikka-masala', cat: 'curries', name: 'Chicken tikka masala', desc: 'The classic, with a little more spice than you might expect.', price: 14.5, gf: true, heat: 1, allergens: ['milk', 'nuts'] },
+  { id: 'rogan-josh', cat: 'curries', name: 'Lamb rogan josh', desc: 'Slow-cooked Kashmiri lamb with fennel, ginger and dried red chilli.', price: 16.5, gf: true, heat: 2, allergens: ['milk'], img: 'rogan-josh.jpg', popular: true },
+  { id: 'jalfrezi', cat: 'curries', name: 'King prawn jalfrezi', desc: 'Stir-fried with peppers, onion and fresh green chillies.', price: 17.95, gf: true, heat: 3, allergens: ['crustaceans', 'mustard'], img: 'jalfrezi.jpg' },
+  { id: 'madras', cat: 'curries', name: 'Chicken madras', desc: 'South Indian style with curry leaves, tamarind and black pepper.', price: 13.95, gf: true, heat: 3, allergens: ['mustard'] },
+  { id: 'korma', cat: 'curries', name: 'Lamb korma', desc: 'Mild and fragrant with cashew, cardamom and a touch of saffron.', price: 15.95, gf: true, heat: 0, allergens: ['milk', 'nuts'] },
+  { id: 'goan-fish', cat: 'curries', name: 'Goan fish curry', desc: 'Hake in coconut, kokum and red chilli.', price: 16.95, gf: true, heat: 2, allergens: ['fish', 'mustard'] },
+  { id: 'karahi', cat: 'curries', name: 'Chicken karahi', desc: 'Cooked fast in the karahi with tomato, ginger and crushed coriander seed.', price: 14.5, gf: true, heat: 2, allergens: [] },
+
+  { id: 'biryani', cat: 'biryani', name: 'Chicken dum biryani', desc: 'Hyderabadi style, sealed with pastry and slow-cooked. Served with raita.', price: 15.95, heat: 1, allergens: ['gluten', 'milk', 'nuts', 'eggs'], img: 'biryani.jpg', popular: true },
+  { id: 'lamb-biryani', cat: 'biryani', name: 'Lamb biryani', desc: 'Tender lamb layered with saffron rice and crispy onions. Served with raita.', price: 16.95, heat: 1, allergens: ['gluten', 'milk', 'nuts'] },
+  { id: 'veg-biryani', cat: 'biryani', name: 'Vegetable biryani', desc: 'Seasonal vegetables, paneer and saffron rice. Served with raita.', price: 13.5, v: true, heat: 1, allergens: ['gluten', 'milk', 'nuts'] },
+
+  { id: 'dal-makhani', cat: 'veg', name: 'Dal makhani', desc: 'Black lentils simmered overnight with butter and cream.', price: 10.95, v: true, gf: true, heat: 0, allergens: ['milk'], img: 'dal.jpg', popular: true },
+  { id: 'chana', cat: 'veg', name: 'Chana masala', desc: 'Chickpeas in a tangy onion and tomato masala.', price: 9.95, v: true, vg: true, gf: true, heat: 1, allergens: [] },
+  { id: 'saag-paneer', cat: 'veg', name: 'Saag paneer', desc: 'Spinach and mustard greens with cubes of fresh paneer.', price: 11.5, v: true, gf: true, heat: 1, allergens: ['milk', 'mustard'] },
+  { id: 'tarka', cat: 'veg', name: 'Tarka dal', desc: 'Yellow lentils finished with garlic, cumin and dried chilli.', price: 8.95, v: true, vg: true, gf: true, heat: 1, allergens: ['mustard'] },
+  { id: 'bombay-aloo', cat: 'veg', name: 'Bombay aloo', desc: 'Potatoes with mustard seed, turmeric and green chilli.', price: 8.5, v: true, vg: true, gf: true, heat: 2, allergens: ['mustard'] },
+
+  { id: 'pilau', cat: 'sides', name: 'Pilau rice', desc: 'Basmati with whole spices and saffron.', price: 3.95, v: true, vg: true, gf: true, heat: 0, allergens: [] },
+  { id: 'steamed', cat: 'sides', name: 'Steamed rice', desc: 'Plain basmati.', price: 3.5, v: true, vg: true, gf: true, heat: 0, allergens: [] },
+  { id: 'naan', cat: 'sides', name: 'Plain naan', desc: 'Baked to order in the tandoor.', price: 3.25, v: true, heat: 0, allergens: ['gluten', 'milk', 'eggs'] },
+  { id: 'garlic-naan', cat: 'sides', name: 'Garlic & coriander naan', desc: 'Brushed with garlic butter.', price: 3.75, v: true, heat: 0, allergens: ['gluten', 'milk', 'eggs'] },
+  { id: 'peshwari', cat: 'sides', name: 'Peshwari naan', desc: 'Stuffed with coconut, almond and sultana.', price: 4.25, v: true, heat: 0, allergens: ['gluten', 'milk', 'eggs', 'nuts'] },
+  { id: 'cheese-naan', cat: 'sides', name: 'Cheese & chilli naan', desc: 'Cheddar and green chilli.', price: 4.25, v: true, heat: 1, allergens: ['gluten', 'milk', 'eggs'] },
+  { id: 'roti', cat: 'sides', name: 'Tandoori roti', desc: 'Wholemeal flatbread.', price: 2.95, v: true, vg: true, heat: 0, allergens: ['gluten'] },
+  { id: 'raita', cat: 'sides', name: 'Cucumber raita', desc: 'Yoghurt with cucumber, mint and roasted cumin.', price: 2.95, v: true, gf: true, heat: 0, allergens: ['milk'] },
+
+  { id: 'gulab-jamun', cat: 'desserts', name: 'Gulab jamun', desc: 'Warm milk dumplings in rose and cardamom syrup, pistachio.', price: 5.95, v: true, heat: 0, allergens: ['gluten', 'milk', 'nuts'], img: 'gulab-jamun.jpg' },
+  { id: 'kulfi', cat: 'desserts', name: 'Mango kulfi', desc: 'Traditional Indian ice cream with Alphonso mango.', price: 5.5, v: true, gf: true, heat: 0, allergens: ['milk', 'nuts'] },
+  { id: 'brulee', cat: 'desserts', name: 'Masala chai crème brûlée', desc: 'Spiced tea custard with a burnt sugar top.', price: 6.5, v: true, gf: true, heat: 0, allergens: ['milk', 'eggs'] },
+];
+
+export const OFFERS = [
+  { title: 'Early evening', price: '£17.95', text: 'Two courses, Sunday to Thursday, 5pm to 6:30pm. Dine in only.' },
+  { title: 'Tuesday feast', price: '£25 pp', text: 'Sharing banquet for two or more: poppadoms, starters, three curries, rice, naan and dessert.' },
+  { title: '15% off collection', price: '15%', text: 'On every online collection order over £20. Applied automatically at checkout.' },
+  { title: 'Poppadoms on us', price: 'Free', text: 'Poppadoms with mango chutney, mint raita and spiced onion with every main. Dine in, collection or delivery.' },
+];

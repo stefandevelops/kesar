@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kesar Indian Kitchen · Belfast, Templepatrick, Lisburn, Bangor & Newry</title>
+    <meta name="description" content="Indian restaurants across Northern Ireland. Order online for collection or delivery, book a table, and see our full menu with allergen information." />
+    <meta name="theme-color" content="#16110d" />
+    <meta property="og:title" content="Kesar Indian Kitchen" />
+    <meta property="og:description" content="Five Indian restaurants across Northern Ireland. Order online or book a table." />
+    <meta property="og:image" content="https://stefandevelops.github.io/kesar/img/hero.jpg" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2316110d'/%3E%3Cpath d='M16 6c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z' fill='%23e3a43c'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div class="announce" id="announce">Order direct and save: <b>15% off collection</b> over £20, and no app fees.</div>
+
+    <header class="header" id="header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Kesar Indian Kitchen home">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M16 7c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" fill="currentColor"/></svg>
+          <span class="brand-name">Kesar<small>Indian Kitchen</small></span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Main">
+          <a href="#menu">Menu</a>
+          <a href="#order">Order online</a>
+          <a href="#book">Book a table</a>
+          <a href="#locations">Locations</a>
+          <a href="#offers">Offers</a>
+          <a href="#gift">Gift cards</a>
+        </nav>
+        <div class="header-actions">
+          <button class="branch-btn" id="branch-btn" type="button" aria-haspopup="dialog">
+            <span class="dot" id="branch-dot"></span><span id="branch-label">Choose a restaurant</span>
+          </button>
+          <button class="bag-btn" id="bag-btn" type="button" aria-label="Open your order">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="bag-count" id="bag-count">0</span>
+          </button>
+          <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-stage">
+        <img class="hero-img" src="/img/hero.jpg" alt="A table of Indian dishes: butter chicken, lamb rogan josh, biryani, dal makhani, naan and chutneys" />
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-shade"></div>
+        <p class="hero-hint" aria-hidden="true">Scroll to snap</p>
+        <div class="hero-dips">
+          <p class="hero-dips-title">Poppadoms and three dips, on us</p>
+          <p class="hero-dips-list">Free with every main · Mango chutney · Mint raita · Spiced onion</p>
+        </div>
+        <div class="wrap hero-inner">
+          <p class="eyebrow">Indian kitchen · Five restaurants across Northern Ireland</p>
+          <h1>Charcoal, spice and <em>slow-cooked</em> sauces since 2004.</h1>
+          <p class="lede">From our first dining room on Botanic Avenue to Templepatrick, Lisburn, Bangor and Newry. Everything is cooked to order from family recipes, with naan straight from the tandoor.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="#order">Order online</a>
+            <a class="btn btn-ghost" href="#book">Book a table</a>
+          </div>
+          <div class="hero-branch" id="hero-branch" aria-live="polite"></div>
+        </div>
+        </div>
+      </section>
+
+      <ul class="trust wrap" aria-label="Why Kesar">
+        <li><b>5</b><span>restaurants across NI</span></li>
+        <li><b>4.7 ★</b><span>from 3,200+ Google reviews</span></li>
+        <li><b>Halal</b><span>certified chicken and lamb</span></li>
+        <li><b>15% off</b><span>online collection over £20</span></li>
+      </ul>
+
+      <section class="section" id="menu" aria-labelledby="menu-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">The menu</p>
+              <h2 id="menu-title">Cooked to order, every time</h2>
+            </div>
+            <p class="section-lede">The same menu in all five restaurants. Tell us how hot you like it and we'll adjust most dishes. Prices include VAT.</p>
+          </div>
+
+          <div class="menu-bar" id="menu-bar">
+            <div class="cat-tabs" id="cat-tabs" role="tablist" aria-label="Menu sections"></div>
+            <div class="diet" role="group" aria-label="Dietary filters">
+              <button type="button" data-diet="v" aria-pressed="false"><i class="tag v">V</i> Vegetarian</button>
+              <button type="button" data-diet="vg" aria-pressed="false"><i class="tag vg">VG</i> Vegan</button>
+              <button type="button" data-diet="gf" aria-pressed="false"><i class="tag gf">GF</i> Gluten-free</button>
+              <button type="button" data-diet="mild" aria-pressed="false">Mild only</button>
+            </div>
+          </div>
+
+          <div id="menu-list"></div>
+          <p class="empty" id="menu-empty" hidden>No dishes match those filters. Try removing one.</p>
+
+          <p class="allergen-note">
+            <b>Allergies?</b> Tap “Allergens” on any dish for the 14 major allergens. Our kitchens handle nuts, gluten and dairy, so we can't guarantee any dish is free from traces. Please tell your server or add a note to your order.
+          </p>
+        </div>
+      </section>
+
+      <section class="section order" id="order" aria-labelledby="order-title">
+        <div class="wrap order-grid">
+          <div class="order-media"><img src="/img/takeaway.jpg" alt="An open Kesar takeaway bag with butter chicken, rice and garlic naan" loading="lazy" /></div>
+          <div>
+            <p class="kicker">Order online</p>
+            <h2 id="order-title">Collection or delivery, straight from our kitchen</h2>
+            <p>Ordering here costs less than the apps: 15% off collection orders over £20, and delivery is £2.50 (free over £30). Same food, same price as the restaurant.</p>
+
+            <div class="mode" role="radiogroup" aria-label="How would you like your order?">
+              <button type="button" role="radio" data-mode="collection" aria-checked="true"><b>Collection</b><span id="collect-eta">Ready in about 25 min</span></button>
+              <button type="button" role="radio" data-mode="delivery" aria-checked="false"><b>Delivery</b><span>From £2.50, free over £30</span></button>
+            </div>
+
+            <form class="pc-check" id="pc-form" hidden novalidate>
+              <label for="pc-input">Your postcode</label>
+              <div class="inline">
+                <input id="pc-input" name="postcode" autocomplete="postal-code" placeholder="e.g. BT7 1JL" />
+                <button class="btn btn-dark" type="submit">Check</button>
+              </div>
+              <div class="pc-result" id="pc-result" aria-live="polite"></div>
+            </form>
+
+            <div class="order-status" id="order-status" aria-live="polite"></div>
+            <a class="btn btn-gold" href="#menu">Start your order</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="offers" aria-labelledby="offers-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Offers</p>
+              <h2 id="offers-title">Good reasons to come in midweek</h2>
+            </div>
+            <p class="section-lede">Available at every Kesar restaurant. Offers can't be combined.</p>
+          </div>
+          <div class="offers" id="offers-list"></div>
+        </div>
+      </section>
+
+      <section class="section book" id="book" aria-labelledby="book-title">
+        <div class="wrap book-grid">
+          <div>
+            <p class="kicker">Book a table</p>
+            <h2 id="book-title">Reserve in under a minute</h2>
+            <p>We hold tables for 15 minutes. For 11 or more, or the private dining rooms in Belfast and Bangor, please call the restaurant.</p>
+
+            <form class="book-form" id="book-form" novalidate>
+              <div class="row">
+                <label>Restaurant<select name="branch" id="book-branch" required></select></label>
+                <label>Guests<select name="guests" id="book-guests"></select></label>
+              </div>
+              <div class="row">
+                <label>Date<select name="date" id="book-date" required></select></label>
+                <label>Time<select name="time" id="book-time" required></select></label>
+              </div>
+              <p class="book-note" id="book-note" aria-live="polite"></p>
+              <div class="row">
+                <label>Name<input name="name" autocomplete="name" required /></label>
+                <label>Mobile<input name="phone" type="tel" autocomplete="tel" required /></label>
+              </div>
+              <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+              <div class="row">
+                <label>Occasion
+                  <select name="occasion">
+                    <option>None</option><option>Birthday</option><option>Anniversary</option><option>Date night</option><option>Business</option><option>Celebration</option>
+                  </select>
+                </label>
+                <label>Highchair needed?
+                  <select name="highchair"><option>No</option><option>Yes, one</option><option>Yes, two</option></select>
+                </label>
+              </div>
+              <label>Requests or allergies (optional)<textarea name="notes" rows="2" maxlength="300"></textarea></label>
+              <button class="btn btn-gold" type="submit">Book table</button>
+              <p class="form-msg" id="book-msg" role="status"></p>
+            </form>
+          </div>
+          <div class="book-media"><img src="/img/interior.jpg" alt="The dining room at Kesar Belfast with teal velvet booths and brass lamps" loading="lazy" /></div>
+        </div>
+      </section>
+
+      <section class="section" id="locations" aria-labelledby="loc-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Locations</p>
+              <h2 id="loc-title">Five kitchens, one family</h2>
+            </div>
+            <p class="section-lede">Each restaurant delivers to the postcodes around it. Choose your nearest and we'll remember it.</p>
+          </div>
+          <div class="locations" id="locations-list"></div>
+          <div class="map-wrap">
+            <iframe id="map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story" id="story" aria-labelledby="story-title">
+        <div class="wrap story-grid">
+          <div class="story-media"><img src="/img/tandoor.jpg" alt="A Kesar chef lifting fresh naan out of the clay tandoor" loading="lazy" /></div>
+          <div>
+            <p class="kicker">Our story</p>
+            <h2 id="story-title">A tandoor on Botanic Avenue</h2>
+            <p>Raj and Meena Sharma opened the first Kesar in 2004 with eleven tables and a clay oven shipped from Punjab. Students came for the butter chicken, families came back for Sunday biryani, and twenty years later there are five of us.</p>
+            <p>Every restaurant still has its own tandoor and makes its sauces from scratch each morning. Head chef Arjun trains every new cook in Belfast before they move to a kitchen of their own.</p>
+            <div class="facts">
+              <div><b>2004</b><span>First restaurant</span></div>
+              <div><b>94</b><span>Staff across NI</span></div>
+              <div><b>5★</b><span>Food hygiene, every site</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section events" id="events" aria-labelledby="events-title">
+        <div class="wrap events-inner">
+          <div>
+            <p class="kicker">Private dining & catering</p>
+            <h2 id="events-title">Parties, office lunches and weddings</h2>
+          </div>
+          <div class="events-cols">
+            <div><h3>Private rooms</h3><p>Belfast seats 24 and Bangor 16. Set banquet menus from £29.95 per person, no room hire fee Sunday to Thursday.</p></div>
+            <div><h3>Office catering</h3><p>Hot buffets for 15 to 150 across Greater Belfast, delivered in chafing dishes with plates and cutlery.</p></div>
+            <div><h3>Weddings & mehndi</h3><p>Full Indian wedding menus with live tandoor stations. We'll come and cook at your venue.</p></div>
+          </div>
+          <a class="btn btn-ghost" href="mailto:events@kesarkitchen.co.uk">Email the events team</a>
+        </div>
+      </section>
+
+      <section class="section" id="gift" aria-labelledby="gift-title">
+        <div class="wrap gift-grid">
+          <div class="gift-card" aria-hidden="true">
+            <span class="gc-brand">Kesar</span>
+            <span class="gc-amount" id="gc-amount">£50</span>
+            <span class="gc-note">Gift card · All five restaurants</span>
+          </div>
+          <div>
+            <p class="kicker">Gift cards</p>
+            <h2 id="gift-title">Dinner, sorted</h2>
+            <p>E-gift cards arrive by email within minutes and can be used in any Kesar restaurant or online for 24 months.</p>
+            <form class="gift-form" id="gift-form" novalidate>
+              <div class="amounts" role="radiogroup" aria-label="Amount">
+                <button type="button" role="radio" data-amount="25" aria-checked="false">£25</button>
+                <button type="button" role="radio" data-amount="50" aria-checked="true">£50</button>
+                <button type="button" role="radio" data-amount="75" aria-checked="false">£75</button>
+                <button type="button" role="radio" data-amount="100" aria-checked="false">£100</button>
+              </div>
+              <div class="row">
+                <label>Their name<input name="to" required /></label>
+                <label>Their email<input name="email" type="email" required /></label>
+              </div>
+              <label>Message (optional)<input name="message" maxlength="120" placeholder="Happy birthday! Dinner's on me." /></label>
+              <button class="btn btn-gold" type="submit">Send gift card</button>
+              <p class="form-msg" id="gift-msg" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews" aria-labelledby="reviews-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Reviews</p>
+              <h2 id="reviews-title">What people say</h2>
+            </div>
+            <p class="section-lede">4.7 out of 5 from over 3,200 Google reviews across our restaurants.</p>
+          </div>
+          <div class="review-grid">
+            <figure><blockquote>“Best butter chicken in Belfast, and I've done the research. The garlic naan is worth the trip on its own.”</blockquote><figcaption>Ciara M. · Belfast</figcaption></figure>
+            <figure><blockquote>“Booked the Tuesday feast for eight of us in Templepatrick. Far too much food, brilliant staff, and parking right outside.”</blockquote><figcaption>Gareth K. · Templepatrick</figcaption></figure>
+            <figure><blockquote>“Ordered collection on a Friday and it was ready exactly when they said. The 15% off is a nice touch.”</blockquote><figcaption>Priya S. · Lisburn</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="wrap faq-grid">
+          <div>
+            <p class="kicker">Questions</p>
+            <h2 id="faq-title">Good to know</h2>
+            <p>Anything else? Ring your local restaurant. Numbers are under Locations.</p>
+          </div>
+          <div class="faq-list">
+            <details><summary>Is your meat halal?</summary><p>Yes. All our chicken and lamb is halal certified. Our prawns and fish are sustainably sourced, and we don't serve pork or beef.</p></details>
+            <details><summary>Do you cater for allergies?</summary><p>Every dish lists the 14 major allergens. Our kitchens use nuts, gluten and dairy, so there's a risk of cross-contact. Please tell us about any allergy when you book or order, and we'll talk you through the safest options.</p></details>
+            <details><summary>Where do you deliver?</summary><p>Each restaurant delivers to the postcodes around it, for example Belfast covers BT1 to BT9 and BT12 to BT15. Check your postcode in the Order section.</p></details>
+            <details><summary>Can I bring my own wine?</summary><p>Lisburn is bring your own with no corkage. Our other restaurants are fully licensed.</p></details>
+            <details><summary>Do you have a kids menu?</summary><p>Yes, in Lisburn, Bangor and Newry: mild chicken curry or chicken tikka with rice or chips, and a kulfi, for £7.95. Elsewhere we're happy to make half portions.</p></details>
+            <details><summary>How do gift cards work?</summary><p>They're emailed instantly, work in every restaurant and online, and are valid for 24 months. You can spend them over several visits.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="club" aria-labelledby="club-title">
+        <div class="wrap club-inner">
+          <div>
+            <h2 id="club-title">Join the Kesar Club</h2>
+            <p>A free dessert on your birthday, new dishes before anyone else and the occasional offer. About one email a month.</p>
+          </div>
+          <form class="club-form" id="club-form" novalidate>
+            <label class="sr-only" for="club-email">Email address</label>
+            <input id="club-email" type="email" placeholder="you@example.com" required />
+            <button class="btn btn-gold" type="submit">Join free</button>
+            <p class="form-msg" id="club-msg" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <span class="brand-name big">Kesar<small>Indian Kitchen</small></span>
+          <p>Family-run Indian restaurants in Belfast, Templepatrick, Lisburn, Bangor and Newry since 2004.</p>
+        </div>
+        <div>
+          <h3>Restaurants</h3>
+          <ul id="footer-branches"></ul>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#menu">Menu & allergens</a></li>
+            <li><a href="#order">Order online</a></li>
+            <li><a href="#book">Book a table</a></li>
+            <li><a href="#events">Private dining</a></li>
+            <li><a href="#gift">Gift cards</a></li>
+            <li><a href="#faq">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-base">
+        <p>© 2026 Kesar Restaurants Ltd · Registered in Northern Ireland</p>
+        <p class="demo-note">Demo site: Kesar, its restaurants, staff, reviews and phone numbers are fictional. No orders, bookings or payments are processed.</p>
+      </div>
+    </footer>
+
+    <!-- order drawer -->
+    <div class="scrim" id="scrim" hidden></div>
+    <aside class="drawer" id="drawer" aria-labelledby="drawer-title" aria-hidden="true" role="dialog">
+      <div class="drawer-head">
+        <h2 id="drawer-title">Your order</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Close order">✕</button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+      <div class="drawer-foot" id="drawer-foot"></div>
+    </aside>
+
+    <!-- branch picker -->
+    <dialog class="modal" id="branch-dialog" aria-labelledby="branch-dialog-title">
+      <div class="modal-head">
+        <h2 id="branch-dialog-title">Choose your restaurant</h2>
+        <button class="icon-btn" type="button" data-dialog-close aria-label="Close">✕</button>
+      </div>
+      <div class="branch-options" id="branch-options"></div>
+    </dialog>
+
+    <!-- allergens -->
+    <dialog class="modal" id="allergen-dialog" aria-labelledby="allergen-title">
+      <div class="modal-head">
+        <h2 id="allergen-title">Allergens</h2>
+        <button class="icon-btn" type="button" data-dialog-close aria-label="Close">✕</button>
+      </div>
+      <div id="allergen-body"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
